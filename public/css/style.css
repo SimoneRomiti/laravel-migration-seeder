@@ -4,3 +4,19 @@
 .table th{
 	text-align: center;
 }
+
+.fa-chevron-left{
+	font-size: 30px;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.fa-chevron-right{
+	font-size: 30px;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}

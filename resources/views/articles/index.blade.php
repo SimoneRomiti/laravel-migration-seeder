@@ -27,8 +27,8 @@
 					<td>{{ $article->author }}</td>
 					<td>{{ $article->publication_date }}</td>
 					<td><a class="btn btn-outline-light" href="{{ route('articles.show', $article->id) }}"><i class="fas fa-search-plus"></i></a></td>
-					<td><a class="btn btn-outline-light" href=""><i class="fas fa-pencil-alt"></i></a></td>
-					<td><a class="btn btn-outline-light" href=""><i class="fas fa-trash-alt"></i></a></td>
+					{{-- <td><a class="btn btn-outline-light" href=""><i class="fas fa-pencil-alt"></i></a></td>
+					<td><a class="btn btn-outline-light" href=""><i class="fas fa-trash-alt"></i></a></td> --}}
 				</tr>
 			@endforeach
 		</tbody>

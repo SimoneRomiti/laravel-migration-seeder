@@ -48,9 +48,28 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $article = Article::findOrFail($id);
+        $article = Article::find($id);
+        if(empty($article)){
+            abort('404');
+        }
 
-        return view('articles.show', ['article' => $article]);
+        $index = $id - 1;
+        $prev = Article::find($index);
+        while(empty($prev) && $article->id > 1){
+            $prev = Article::find($index);
+            $index--;
+        }
+
+        $index = $id + 1;
+        $next = Article::find($index);
+        $max = Article::max('id');
+        while(empty($next) && $article->id < $max){
+            $next = Article::find($index);
+            $index++;
+        }
+
+
+        return view('articles.show', ['article' => $article, 'prev' => $prev, 'next' => $next, 'max' => $max]);
     }
 
     /**

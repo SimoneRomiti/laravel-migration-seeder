@@ -15,5 +15,15 @@
 			@endforeach
 		</table>
 	</div>
+	@if ($article->id > 1)
+			<a href="{{ route('articles.show', ['article' => $prev]) }}"><i class="fas fa-chevron-left"></i></a>	
+	@endif
+
+	@if ($article->id < $max)
+			<a href="{{ route('articles.show', ['article' => $next]) }}"><i class="fas fa-chevron-right"></i></a>
+	@endif
+		
+	
+	
 
 @endsection
